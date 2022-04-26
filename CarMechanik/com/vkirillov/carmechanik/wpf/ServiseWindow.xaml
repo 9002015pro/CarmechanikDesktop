@@ -1,0 +1,48 @@
+﻿<Window x:Class="CarMechanik.com.vkirillov.carmechanik.wpf.ServiseWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:CarMechanik.com.vkirillov.carmechanik.wpf"
+        mc:Ignorable="d"
+        Title="ServiseWindow" Height="450" Width="800">
+    <ListView
+    Grid.Row="1"
+    Grid.Column="1"
+    ItemsSource="{Binding ServisesList}"
+    ScrollViewer.HorizontalScrollBarVisibility="Disabled" >
+
+        <ListView.ItemsPanel>
+            <ItemsPanelTemplate>
+                <WrapPanel 
+                HorizontalAlignment="Center" />
+            </ItemsPanelTemplate>
+        </ListView.ItemsPanel>
+        <ListView.ItemTemplate>
+            <DataTemplate>
+                <Border
+                    BorderThickness="1"
+                    BorderBrush="Black"
+                    CornerRadius="5"
+                    >
+                    <StackPanel
+                        Orientation="Vertical">
+
+    
+                        <TextBlock
+                            Text="{Binding Name}"
+                            Margin="10"/>
+                        <TextBlock
+                            Margin="10" 
+                            Text="{Binding Description}"/>
+                        <TextBlock
+                            Margin="10"
+                            Text="{Binding Price}"/>
+
+                    </StackPanel>
+                </Border>
+            </DataTemplate>
+        </ListView.ItemTemplate>
+
+    </ListView>
+</Window>
